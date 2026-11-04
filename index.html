@@ -100,7 +100,7 @@ h1 { margin: 0; font-size: 1.75rem; line-height: 1.2; }
 }
 h2 { margin: 0; font-size: 1.25rem; line-height: 1.25; }
 ol { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 16px; counter-reset: passo; }
-li { display: grid; grid-template-columns: 36px 1fr; gap: 12px; counter-increment: passo; }
+li { display: grid; grid-template-columns: 36px minmax(0, 1fr); gap: 12px; counter-increment: passo; overflow-wrap: anywhere; }
 li::before {
   content: counter(passo);
   width: 36px;
@@ -148,18 +148,23 @@ footer { margin: 0; padding: 0 4px; color: var(--texto-2); text-align: center; }
   </header>
 
   <section class="cartao cartao--entrar" aria-label="Entrar">
-    <p class="chamada">O acesso é pela sua <strong>conta do Claude</strong>, com o e-mail que a coordenação da casa cadastrou.</p>
+    <p class="chamada">O acesso é pela sua <strong>conta do Claude</strong>, com o e-mail que a coordenação da casa convidou.</p>
     <a class="botao" href="https://claude.ai/artifact/TSXZus2FpGNJdcuYfukkjh"><span>Entrar com o Claude</span><svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><path d="M5 12h13M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    <p class="nota">O botão leva ao site do Claude. Só entra quem foi convidado pela coordenação.</p>
+    <p class="nota">O botão leva ao site do Claude e só abre para quem a coordenação convidou, entrando com o e-mail do convite.</p>
   </section>
 
   <section class="cartao" aria-labelledby="como-entrar">
     <h2 id="como-entrar">Como entrar</h2>
     <ol>
-      <li><div><strong>A coordenação cadastra você</strong><p>A coordenação da casa cadastra o seu e-mail e manda um convite. Ele chega por e-mail, em inglês, com o botão “View invitation”.</p></div></li>
-      <li><div><strong>Você entra no Claude</strong><p>Use o mesmo e-mail do convite: “Continuar com Google”, se for Gmail, ou “Continuar com e-mail”, que manda um código. Não existe senha.</p></div></li>
-      <li><div><strong>Primeiro acesso</strong><p>Escolha o seu nome na lista ou, se ele não estiver lá, peça acesso. A coordenação aprova, define o que você pode fazer e o sistema abre as suas seções.</p></div></li>
+      <li><div><strong>Crie a sua conta no Claude</strong><p>Se ainda não tem, crie em claude.ai com o e-mail que você vai usar: “Continuar com Google”, se for Gmail, ou “Continuar com e-mail”, que manda um código. Não existe senha. Diga esse e-mail à coordenação: sem conta, o convite pode não chegar.</p></div></li>
+      <li><div><strong>Entre com o mesmo e-mail</strong><p>A coordenação convida o seu e-mail pelo Claude. Quando ela avisar, toque em “Entrar com o Claude”, com o mesmo e-mail da conta. Se aparecer “Página não encontrada”, procure o e-mail do convite de no-reply-claude@mail.anthropic.com (olhe também no spam): abra no navegador, toque em “View invitation” e depois em “Accept and open”.</p></div></li>
+      <li><div><strong>Pronto</strong><p>O sistema reconhece o e-mail do convite e abre as suas seções. Se a coordenação ainda não tiver cadastrado você, confira os seus dados e peça acesso: ela aprova e define o que você pode fazer. Das próximas vezes, é só usar o botão “Entrar com o Claude”.</p></div></li>
     </ol>
+  </section>
+
+  <section class="ajuda" aria-labelledby="nao-encontrada">
+    <h2 id="nao-encontrada">Apareceu “Página não encontrada”?</h2>
+    <p>Você está com uma conta do Claude que ainda não tem o convite da casa. Confira se entrou com o e-mail que a coordenação convidou: se estiver com outra conta, saia dela no Claude e entre com o e-mail do convite. Se for o e-mail certo, abra o e-mail do convite e toque em “Accept and open”. Se você criou a conta depois do convite, peça à coordenação para convidar de novo.</p>
   </section>
 
   <section class="ajuda" aria-labelledby="icone">
@@ -169,7 +174,7 @@ footer { margin: 0; padding: 0 4px; color: var(--texto-2); text-align: center; }
 
   <section class="ajuda" aria-labelledby="sem-convite">
     <h2 id="sem-convite">Ainda não tem convite?</h2>
-    <p>Fale com a coordenação da casa e diga qual e-mail você usa, ou vai usar, para entrar no Claude.</p>
+    <p>Crie a sua conta no Claude (passo 1) e mande o e-mail dela para a coordenação da casa.</p>
     
   </section>
 
